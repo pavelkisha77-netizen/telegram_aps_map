@@ -1,0 +1,88 @@
+.point-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.point-details__coords {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.point-details__coord {
+  padding: 8px 12px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.point-details__coord-label {
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.point-details__form {
+  width: 100%;
+}
+
+.point-details__section {
+  margin-bottom: 16px;
+}
+
+.point-details__section-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.point-details__media-note {
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.point-details__media-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.point-details__media-card {
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.point-details__media-image,
+.point-details__media-video {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.point-details__media-delete {
+  width: 100%;
+}
+
+.point-details__empty-media {
+  padding: 12px;
+  font-size: 13px;
+  color: #777;
+  background: #fafafa;
+  border: 1px dashed #ddd;
+  border-radius: 8px;
+}
+
+.point-details__actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.point-details__actions .ant-btn {
+  flex: 1 1 auto;
+}

@@ -1,0 +1,112 @@
+.add-point-form {
+  width: 100%;
+}
+
+.add-point-form__empty {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.add-point-form__coords {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.add-point-form__coord {
+  padding: 8px 12px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.add-point-form__coord-label {
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.add-point-form__form {
+  width: 100%;
+}
+
+.add-point-form__actions .ant-form-item-control-input-content {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.add-point-form__submit {
+  min-width: 110px;
+}
+
+.upload-carousel-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+.upload-button {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.preview-thumbs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.thumb-wrapper {
+  position: relative;
+  width: 120px;
+  height: 90px;
+}
+
+.thumb-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.thumb-remove-btn {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  z-index: 10;
+}
+
+.modal-preview-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 16px;
+}
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+}
+
+.prev-btn {
+  left: 0;
+}
+.next-btn {
+  right: 0;
+}
+
+.download-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 20;
+}
