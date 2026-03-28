@@ -15,6 +15,16 @@ export default function App() {
   const draftPoint = useMapStore((state) => state.draftPoint);
   const [modalOpen, setModalOpen] = useState(false);
 
+
+  useEffect(() => {
+  const tg = window.Telegram?.WebApp;
+  if (tg) {
+    tg.ready();
+    tg.expand();
+  }
+}, []);
+ 
+  
   useEffect(() => {
     async function loadPoints() {
       try {
