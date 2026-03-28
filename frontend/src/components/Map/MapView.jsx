@@ -44,7 +44,6 @@ export default function MapView() {
         >
           <Tooltip direction="top" offset={[0, -12]} opacity={1}>
             <div className="marker-tooltip">
-              <div className="marker-tooltip__title">{point.title || 'Без названия'}</div>
 
               {point.description ? (
                 <div className="marker-tooltip__text">
