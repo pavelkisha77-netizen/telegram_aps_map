@@ -1,4 +1,4 @@
-import { MapContainer, Marker, Popup, TileLayer, Tooltip } from 'react-leaflet';
+import { MapContainer, Marker, TileLayer, Tooltip } from 'react-leaflet';
 import { useMapStore } from '../../store/store';
 import ClickHandler from './ClickHandler';
 import L from 'leaflet';
@@ -6,13 +6,15 @@ import './MapView.css';
 
 const VISICOM_TILES_KEY = import.meta.env.VITE_VISICOM_API_KEY;
 
-// фикс стандартной иконки leaflet
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
-  iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png'
-});
+function createColorMarker(color = 'red') {
+  return L.divIcon({
+    className: 'custom-marker-wrapper',
+    html: `<div class="custom-marker custom-marker--${color}"></div>`,
+    iconSize: [18, 18],
+    iconAnchor: [9, 9],
+    popupAnchor: [0, -10]
+  });
+}
 
 export default function MapView() {
   const points = useMapStore((state) => state.points);
@@ -35,16 +37,19 @@ export default function MapView() {
         <Marker
           key={point._id}
           position={[point.location.lat, point.location.lng]}
+          icon={createColorMarker(point.markerColor)}
           eventHandlers={{
             click: () => setSelectedPoint(point)
           }}
         >
-          <Tooltip direction="top" offset={[0, -10]} opacity={1}>
+          <Tooltip direction="top" offset={[0, -12]} opacity={1}>
             <div className="marker-tooltip">
+              <div className="marker-tooltip__title">{point.title || 'Без названия'}</div>
+
               {point.description ? (
                 <div className="marker-tooltip__text">
-                  {point.description.length > 18
-                    ? `${point.description.slice(0, 18)}...`
+                  {point.description.length > 20
+                    ? `${point.description.slice(0, 20)}...`
                     : point.description}
                 </div>
               ) : null}
@@ -53,7 +58,9 @@ export default function MapView() {
         </Marker>
       ))}
 
-      {draftPoint && <Marker position={[draftPoint.lat, draftPoint.lng]} />}
+      {draftPoint && (
+        <Marker position={[draftPoint.lat, draftPoint.lng]} icon={createColorMarker('red')} />
+      )}
     </MapContainer>
   );
 }

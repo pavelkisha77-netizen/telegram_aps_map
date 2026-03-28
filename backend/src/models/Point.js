@@ -10,6 +10,10 @@ const MediaSchema = new mongoose.Schema(
     url: {
       type: String,
       required: true
+    },
+    public_id: {
+      type: String,
+      required: true
     }
   },
   { _id: false }
@@ -35,6 +39,14 @@ const PointSchema = new mongoose.Schema(
     media: {
       type: [MediaSchema],
       default: []
+    },
+    expiresAt: {
+      type: Date,
+      required: true
+    },
+    deleteAt: {
+      type: Date,
+      required: true
     }
   },
   {
