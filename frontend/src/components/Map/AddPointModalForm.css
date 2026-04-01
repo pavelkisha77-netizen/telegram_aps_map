@@ -1,0 +1,51 @@
+.preview-thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.thumb-wrapper {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #d9d9d9;
+  background: #fafafa;
+}
+
+.thumb-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  display: block;
+}
+
+.thumb-remove-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 2;
+}
+
+.modal-preview-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 60vh;
+  position: relative;
+}
+
+.prev-btn,
+.next-btn {
+  flex-shrink: 0;
+}
+
+.download-btn {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}

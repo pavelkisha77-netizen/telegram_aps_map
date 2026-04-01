@@ -1,0 +1,37 @@
+.locate-control {
+  position: absolute;
+  right: 16px;
+  bottom: 88px;
+  z-index: 1200;
+}
+
+.locate-control__button {
+  width: 46px !important;
+  height: 46px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px !important;
+  background: #ffffff !important;
+  color: #2563eb !important;
+  border: none !important;
+  justify-content: center;
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.18),
+    0 0 0 2px rgba(59, 130, 246, 0.15),
+    0 0 18px rgba(59, 130, 246, 0.25);
+  text-decoration: none;
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+  animation: map-logo-pulse 2.4s infinite ease-in-out;
+}
+
+.locate-control__button:hover {
+  transform: scale(1.06);
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.22),
+    0 0 0 2px rgba(59, 130, 246, 0.2);
+}

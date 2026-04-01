@@ -66,3 +66,22 @@ export async function uploadMedia(formData) {
 
   return response.json();
 }
+
+export async function deleteMedia(public_id, resource_type) {
+  const response = await fetch(`${API_BASE}/media/delete`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      public_id,
+      resource_type
+    })
+  });
+
+  if (!response.ok) {
+    throw new Error('Не удалось удалить медиа');
+  }
+
+  return response.json();
+}

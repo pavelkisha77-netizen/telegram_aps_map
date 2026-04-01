@@ -4,12 +4,21 @@ export const useMapStore = create((set) => ({
   points: [],
   draftPoint: null,
   selectedPoint: null,
+  selectedCity: null,
+  currentLocation: null,
 
   setPoints: (points) => set({ points }),
 
   addPoint: (point) =>
     set((state) => ({
-      points: [point, ...state.points]
+      points: [
+        {
+          _id: point._id || Date.now().toString(),
+          markerColor: point.markerColor || 'red',
+          ...point
+        },
+        ...state.points
+      ]
     })),
 
   updatePointInStore: (updatedPoint) =>
@@ -29,5 +38,7 @@ export const useMapStore = create((set) => ({
   clearDraftPoint: () => set({ draftPoint: null }),
 
   setSelectedPoint: (selectedPoint) => set({ selectedPoint }),
-  clearSelectedPoint: () => set({ selectedPoint: null })
+  clearSelectedPoint: () => set({ selectedPoint: null }),
+  setSelectedCity: (selectedCity) => set({ selectedCity }),
+  setCurrentLocation: (currentLocation) => set({ currentLocation })
 }));

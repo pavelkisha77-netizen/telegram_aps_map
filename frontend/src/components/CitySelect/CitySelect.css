@@ -1,0 +1,23 @@
+.city-select {
+  position: absolute;
+  top: 16px;
+  left: 30%;
+  right: 30%;
+  z-index: 1200;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.city-select__input {
+  width: min(340px, 100%);
+  pointer-events: auto;
+}
+
+.city-select .ant-select-selector {
+  border-radius: 12px !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+}
